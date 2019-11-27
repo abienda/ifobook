@@ -1,0 +1,308 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  link(rel="stylesheet" href="/stylesheets/style.css")
+  link(rel="stylesheet" href="/stylesheets/style-responsive.css")
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active Profil recherche
+    .row
+      // Article main content
+      article.col-sm-8.maincontent
+        header.page-header
+          h1.page-title Profil recherche
+        section#main-content
+          section.wrapper.site-min-height
+            .row.mt
+              .col-sm-12
+                .row.content-panel
+                  .col-md-4.profile-text.mt.mb.centered
+                    .right-divider.hidden-sm.hidden-xs
+                      h4 1922
+                      h6 FOLLOWERS
+                      h4 290
+                      h6 FOLLOWING
+                      h4 $ 13,980
+                      h6 MONTHLY EARNINGS
+                  // /col-md-4
+                  .col-md-4.profile-text
+                    h3 Nom du membre
+                    h6 Main Administrator
+                    p
+                      | Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
+                    br
+                    p
+                      button.btn.btn-theme
+                        i.fa.fa-envelope
+                        |  Send Message
+                  // /col-md-4
+                  .col-md-4.centered
+                    .profile-pic
+                      p
+                        img.img-circle(src='/img/ui-sam.jpg')
+                      p
+                        button.btn.btn-theme
+                          i.fa.fa-check
+                          |  Follow
+                        button.btn.btn-theme02 Add
+                  // /col-md-4
+                // /row
+              // /col-lg-12
+              .col-lg-12.mt
+                .row.content-panel
+                  .panel-heading
+                    ul.nav.nav-tabs.nav-justified
+                      li.active
+                        a(data-toggle='tab', href='#overview') Overview
+                      li
+                        a.contact-map(data-toggle='tab', href='#contact') Contact
+                      li
+                        a(data-toggle='tab', href='#edit') Edit Profile
+                  // /panel-heading
+                  .panel-body
+                    .tab-content
+                      #overview.tab-pane.active
+                        .row
+                          .col-md-6
+                            textarea.form-control(rows='3', placeholder='Whats on your mind?')
+                            .grey-style
+                              .pull-left
+                                button.btn.btn-sm.btn-theme
+                                  i.fa.fa-camera
+                                button.btn.btn-sm.btn-theme
+                                  i.fa.fa-map-marker
+                              .pull-right
+                                button.btn.btn-sm.btn-theme03 POST
+                            .detailed.mt
+                              h4 Recent Activity
+                              .recent-activity
+                                .activity-icon.bg-theme
+                                  i.fa.fa-check
+                                .activity-panel
+                                  h5 1 HOUR AGO
+                                  p Purchased: Dashio Admin Panel &amp; Front-end theme.
+                                .activity-icon.bg-theme02
+                                  i.fa.fa-trophy
+                                .activity-panel
+                                  h5 5 HOURS AGO
+                                  p Task Completed. Resolved issue with Disk Space.
+                                .activity-icon.bg-theme04
+                                  i.fa.fa-rocket
+                                .activity-panel
+                                  h5 3 DAYS AGO
+                                  p Launched a new product: Flat Pack Heritage.
+                              // /recent-activity
+                            // /detailed
+                          // /col-md-6
+                          .col-md-6.detailed
+                            h4 User Stats
+                            .row.centered.mt.mb
+                              .col-sm-4
+                                h1
+                                  i.fa.fa-money
+                                h3 $22,980
+                                h6 LIFETIME EARNINGS
+                              .col-sm-4
+                                h1
+                                  i.fa.fa-trophy
+                                h3 37
+                                h6 COMPLETED TASKS
+                              .col-sm-4
+                                h1
+                                  i.fa.fa-shopping-cart
+                                h3 1980
+                                h6 ITEMS SOLD
+                            // /row
+                            h4 My Friends
+                            .row.centered.mb
+                              ul.my-friends
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-01.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-02.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-03.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-04.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-05.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-06.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-07.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-08.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-09.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-10.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-11.jpg')
+                              .row.mt
+                                .col-md-4.col-md-offset-4
+                                  h6
+                                    a(href='#') VIEW ALL
+                            // /row
+                            h4 Pending Tasks
+                            .row.centered
+                              .col-md-8.col-md-offset-2
+                                h5 Dashboard Update (40%)
+                                .progress
+                                  .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                                    span.sr-only 40% Complete (success)
+                                h5 Unanswered Messages (80%)
+                                .progress
+                                  .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 80%')
+                                    span.sr-only 80% Complete (success)
+                                h5 Product Review (60%)
+                                .progress
+                                  .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 60%')
+                                    span.sr-only 60% Complete (success)
+                                h5 Friend Requests (90%)
+                                .progress
+                                  .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 90%')
+                                    span.sr-only 90% Complete (success)
+                              // /col-md-8
+                            // /row
+                          // /col-md-6
+                        // /OVERVIEW
+                      // /tab-pane
+                      #contact.tab-pane
+                        .row
+                          .col-md-6
+                            #map
+                          // /col-md-6
+                          .col-md-6.detailed
+                            h4 Location
+                            .col-md-8.col-md-offset-2.mt
+                              p
+                                | Postal Address
+                                br
+                                |  PO BOX 12988, Sutter Ave
+                                br
+                                |  Brownsville, New York.
+                              br
+                              p
+                                | Headquarters
+                                br
+                                |  844 Sutter Ave,
+                                br
+                                |  9003, New York.
+                            h4 Contacts
+                            .col-md-8.col-md-offset-2.mt
+                              p
+                                | Phone: +33 4898-4303
+                                br
+                                |  Cell: 48 4389-4393
+                                br
+                              br
+                              p
+                                | Email: hello@dashiotheme.com
+                                br
+                                |  Skype: UseDashio
+                                br
+                                |  Website: http://Alvarez.is
+                          // /col-md-6
+                        // /row
+                      // /tab-pane
+                      #edit.tab-pane
+                        .row
+                          .col-lg-8.col-lg-offset-2.detailed
+                            h4.mb Personal Information
+                            form.form-horizontal(role='form')
+                              .form-group
+                                label.col-lg-2.control-label  Avatar
+                                .col-lg-6
+                                  input#exampleInputFile.file-pos(type='file')
+                              .form-group
+                                label.col-lg-2.control-label Company
+                                .col-lg-6
+                                  input#c-name.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Lives In
+                                .col-lg-6
+                                  input#lives-in.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Country
+                                .col-lg-6
+                                  input#country.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Description
+                                .col-lg-10
+                                  textarea.form-control(rows='10', cols='30', id='', name='')
+                          .col-lg-8.col-lg-offset-2.detailed.mt
+                            h4.mb Contact Information
+                            form.form-horizontal(role='form')
+                              .form-group
+                                label.col-lg-2.control-label Address 1
+                                .col-lg-6
+                                  input#addr1.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Address 2
+                                .col-lg-6
+                                  input#addr2.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Phone
+                                .col-lg-6
+                                  input#phone.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Cell
+                                .col-lg-6
+                                  input#cell.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Email
+                                .col-lg-6
+                                  input#email.form-control(type='text', placeholder=' ')
+                              .form-group
+                                label.col-lg-2.control-label Skype
+                                .col-lg-6
+                                  input#skype.form-control(type='text', placeholder=' ')
+                              .form-group
+                                .col-lg-offset-2.col-lg-10
+                                  button.btn.btn-theme(type='submit') Save
+                                  button.btn.btn-theme04(type='button') Cancel
+                          // /col-lg-8
+                        // /row
+                      // /tab-pane
+                    // /tab-content
+                  // /panel-body
+                // /col-lg-12
+              // /row
+            // /container
+          // /wrapper
+        // /MAIN CONTENT
+        // main content end
+
+
+  footer#footer
+
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  
+  script(src='/lib/jquery.min.js')
+  script(src='/lib/bootstrap.min.js')
+  
+  
+  
+    

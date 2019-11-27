@@ -1,0 +1,86 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active About
+    .row
+      // Article main content
+      article.col-sm-8.maincontent
+        header.page-header
+          h1.page-title About us
+        h3 IFOBOOK
+        p
+          img.img-rounded.pull-right(src='/img/mac.jpg', alt='', width='300')
+          |  Ifobook est un réseau social pour informaticien.
+        p
+          | Il permet aux éléves en stage ou ancient éléves en poste, de pouvoir partagé leurs expériences ainsi que des offres de stage et offre d'emploi avec les éléves toujour formation.
+        h3 Chef de projet
+        p
+          | Le chef de projet digital ou chef de projet web gère l’ensemble d’un projet web, de l’analyse des besoins du client à la rédaction du cahier des charges. Il coordonne l’ensemble des acteurs du projet, internes et/ou externes.
+        h3 Développeur concepteur d’applications – option data
+        p
+          | Le (la) Développeur concepteur d’applications – option data prend en charge la conception et le développement d’applications informatiques. Le volume des données et leurs variétés étant en perpétuelle évolution dans les entreprises, il (elle) conçoit, modélise et actualise la structure des bases de données selon les orientations et besoins de l’entreprise. En temps réel, il (elle) traitera ces données massives (extraction et analyse), et ce, dans le but de faire évoluer la stratégie de l’entreprise.
+        h3 Développeur full stack JS
+        p
+          | Le Développeur full Stack JS, l’un des professionnels les plus recherchés de la webosphère, doit maîtriser les principales technologies informatiques et les principaux langages de programmation actuellement utilisés. Son développement intègre la dimension front-end (création d’interfaces claires et ergonomiques, intégration des différentes pages), ou back-end (développement et programmation des fonctionnalités et bases de données).
+        h3 Développeur intégrateur Web
+        p
+          | Le Développeur intégrateur web, l’un des professionnels les plus présents dans la Webosphère, conduit des projets de création ou de refonte de sites Web dans le respect d’un cahier des charges. Son développement intègre la dimension du référencement naturel et celle de la diversité des supports de navigation (Responsive Design).
+        h3 Développeur d’applications mobiles et web
+        p
+          | Depuis le maquettage de l’application jusqu’au développement de la partie back-end le(la) développeur(euse) d’applications mobiles met en œuvre ses compétences techniques et sa créativité graphique pour réaliser, adapter ou optimiser des applications. Il(elle) opère sous l’autorité d’un chef de projet et dans le respect d’un cahier des charges. Curieux(se), il(elle) est en veille permanente afin de suivre les évolutions technologiques.
+        h3 Développeur PHP orienté objet – Symfony
+        p
+          | Le Développeur PHP orienté objet – Symfony conduit des projets de création ou de refonte de sites dynamiques grâce au langage PHP, son langage de programmation de prédilection. Son développement intègre la dimension du référencement naturel et celle de la diversité des supports de navigation (responsive design).
+      // /Article
+      // Sidebar
+      aside.col-sm-4.sidebar.sidebar-right
+        .widget
+          h4 Spécialités
+          ul.list-unstyled.list-spaces
+            li
+              a(href='') Chef de projet digital
+              br
+              span.small.text-muted Gère l’ensemble d’un projet web
+            li
+              a(href='') Développeur concepteur d’applications – option data
+              br
+              span.small.text-muted Prend en charge la conception et le développement d’applications informatiques
+            li
+              a(href='') Développeur full stack JS
+              br
+              span.small.text-muted Son développement intègre la dimension front-end, ou back-end
+            li
+              a(href='') Développeur intégrateur Web
+              br
+              span.small.text-muted Conduit des projets de création ou de refonte de sites Web dans le respect d’un cahier des charges.
+            li
+              a(href='') Développeur d’applications mobiles et web
+              br
+              span.small.text-muted Met en œuvre ses compétences techniques et sa créativité graphique pour réaliser, adapter ou optimiser des applications
+            li
+              a(href='') Développeur PHP orienté objet – Symfony
+              br
+              span.small.text-muted Conduit des projets de création ou de refonte de sites dynamiques grâce au langage PHP
+      // /Sidebar
+    // /container
+
+
+  footer#footer
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  
+  
+  
+    

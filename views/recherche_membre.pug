@@ -1,0 +1,73 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  link(rel="stylesheet" href="/stylesheets/style.css")
+  link(rel="stylesheet" href="/stylesheets/style-responsive.css")
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active Recherche membre
+    .row
+      // Article main content
+      article.col-sm-8.maincontent
+        header.page-header
+          h1.page-title Recherche membre
+        section#main-content
+          section.wrapper.site-min-height
+            .row.mt
+              .col-sm-12
+                .row.content-panel
+                  .col-sm-0.col-md-2.col-lg-3
+                  .col-sm-12.col-md-8.col-lg-6
+                    h1(style='text-align: center') Mon site &agrave; moi
+                    .form-group
+                      input#search-user.form-control(type='text', value='', placeholder='Rechercher un ou plusieurs utilisateurs')
+                    div(style='margin-top: 20px')
+                      #result-search
+                      // C'est ici que nous aurons nos résultats de notre recherche
+
+                  
+                    
+                  // /col-md-4
+                // /row
+              // /col-lg-12
+              .col-lg-12.mt
+                .row.content-panel
+                 each comment in docs
+                    p #{comment.body} - 
+                        a(href='' + comment._id) Modifier 
+                // /col-lg-12
+              // /row
+            // /container
+          // /wrapper
+        // /MAIN CONTENT
+        // main content end
+
+
+  footer#footer
+
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  
+  script(src='/lib/jquery.min.js')
+  script(src='/lib/bootstrap.min.js')
+
+  //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  //script(src="https://code.jquery.com/jquery-1.12.4.js")
+  //script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+  //script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+  //script(src='/javascript/recherche_membre.js')
+  
+  
+  
+  
+    

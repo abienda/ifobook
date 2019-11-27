@@ -1,0 +1,113 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  link(rel='stylesheet', type='text/css', href='lib/bootstrap-datepicker/css/datepicker.css')
+ 
+
+
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active Registration
+    .row
+      // Article main content
+      article.col-xs-12.maincontent
+        header.page-header
+          h1.page-title Registration
+        .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+          .panel.panel-default
+            .panel-body
+              h3.thin.text-center Register a new account
+              p.text-center.text-muted
+                | Vous avez vos identifiants, 
+                a(href='/signin') Login
+                |  connectez vous.
+              hr
+
+              if (error)
+                p.error #{error.message}
+
+              form#signup-form(action="/signup" method="POST" autocomplete="off")
+                .top-margin
+                  label Nom
+                  input.form-control(type='text', name='nom', required, autocomplete="off")
+                .top-margin
+                  label Prénom
+                  input.form-control(type='text', name='prenom', required, autocomplete="off")
+                .top-margin
+                  label Genre &thinsp;&thinsp;
+                  select#genre_sexe(aria-label='Genre', name='genre', title='Genre')
+                    option(value='0') Genre
+                    option(value='1', selected='1') Femme
+                    option(value='2') Homme                  
+                .top-margin
+                  label
+                    | Birthday
+                    .input-append.date.dpYears(data-date-viewmode='years', data-date-format='dd-mm-yyyy', data-date='01-01-2014')
+                      input.form-control(type='text', name='birthday', readonly='', value='01-01-2014', size='16')
+                      span.input-group-btn.add-on
+                        button.btn.btn-theme(type='button')
+                          i.fa.fa-calendar
+                .top-margin
+                  label
+                    | Email  
+                    span.text-danger *
+                  input.form-control(type='email', name='email', aria-describedby='emailHelp', required, autocomplete="false")
+                .top-margin
+                  label Username
+                  input.form-control(type='text', name='username', required, autocomplete="off")
+                .row.top-margin
+                  .col-sm-6
+                    label
+                      | Password 
+                      span.text-danger *
+                    input#password(type='password', name='password', required, autocomplete='new-password', pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+                  
+                    #message
+                      p#letter.invalid
+                        | Une lettre 
+                        b minuscule
+                      p#capital.invalid
+                        | Une lettre 
+                        b capitale (majuscule)
+                      p#number.invalid
+                        | Un 
+                        b nombre
+                      p#length.invalid
+                        | Un minimum de 
+                        b 8 caractères
+
+                  .col-sm-6
+                    label
+                      | Confirm Password 
+                      span.text-danger *
+                    input#password_confirmation(type='password', name='password_confirmation', autocomplete="off")
+                hr
+                .row
+                  .col-lg-8
+                    //label.checkbox
+                      input(type='checkbox')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;I&apos;ve read the 
+                      a(href='page_terms.html') Terms and Conditions
+                  .col-lg-4.text-right
+                    button.btn.btn-action(type='submit') Register
+      // /Article
+  // /container
+
+  footer#footer
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  script(src="/lib/jquery-3.3.1.min.js")
+  script(src="/javascript/signup.js")
+
+  script(type='text/javascript', src='lib/bootstrap-datepicker/js/bootstrap-datepicker.js')
+  script(src='lib/advanced-form-components.js')

@@ -1,0 +1,63 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active User access
+    .row
+      // Article main content
+      article.col-xs-12.maincontent
+        header.page-header
+          h1.page-title Sign in
+        .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+          .panel.panel-default
+            .panel-body
+              h3.thin.text-center Sign in to your account
+              p.text-center.text-muted
+                | Vous n'avez pas encore de compte, 
+                a(href='/signup') Register
+                |  c'est rapide et facile.
+              hr
+
+              if (error)
+                p.error #{error.message}
+
+              form(action='/signin' method='POST')
+                .top-margin
+                  label
+                    | Username 
+                    span.text-danger *
+                  input.form-control(type='username', name='username', required)
+                .top-margin
+                  label
+                    | Password 
+                    span.text-danger *
+                  input.form-control(type='password', name='password', required)
+                hr
+                .row
+                  .col-lg-8
+                    b
+                      a(href='/forgot_password') Forgot password ?
+                  .col-lg-4.text-right
+                    button.btn.btn-action(type='submit') Sign in
+      // /Article
+  // /container
+
+  footer#footer
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  //script(src='/lib/jquery-3.3.1.min.js')
+  //script(src='/javascript/main.js')
+  
+  
+    

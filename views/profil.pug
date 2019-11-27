@@ -1,0 +1,245 @@
+extends layouts/base
+
+block content
+
+  header#head.secondary
+  link(rel="stylesheet" href="/stylesheets/style.css")
+  link(rel="stylesheet" href="/stylesheets/style-responsive.css")
+  // container
+  .container
+    ol.breadcrumb
+      li
+        a(href='/') Home
+      li.active Profil
+    .row
+      // Article main content
+      article.col-sm-8.maincontent
+        header.page-header
+          h1.page-title Profil
+        section#main-content
+          section.wrapper.site-min-height
+            .row.mt
+              .col-sm-12
+                .row.content-panel
+                  .col-md-4.profile-text.mt.mb.centered
+                    .right-divider.hidden-sm.hidden-xs
+                      h4 1922
+                      h6 FOLLOWERS
+                      h4 290
+                      h6 FOLLOWING
+                  // /col-md-4
+                  .col-md-4.profile-text
+                    h3 #{user.username}
+                    h6 Societe : #{user.societe}
+                    p
+                      | presentation : #{user.presentation}
+                    br
+                    p
+                      button.btn.btn-theme
+                        i.fa.fa-envelope
+                        |  Send Message
+                  // /col-md-4
+                  .col-md-4.centered
+                    .profile-pic
+                      p
+                        img.img-circle(src="/img/friends/"+user.avatar+".jpg")
+                      p
+                        button.btn.btn-theme
+                          i.fa.fa-check
+                          |  Follow
+                        button.btn.btn-theme02 Add
+                  // /col-md-4
+                // /row
+              // /col-lg-12
+              .col-lg-12.mt
+                .row.content-panel
+                  .panel-heading
+                    ul.nav.nav-tabs.nav-justified
+                      li.active
+                        a(data-toggle='tab', href='#overview') Overview
+                      li
+                        a.friend-map(data-toggle='tab', href='#friend') FRIENDS
+                      li
+                        a.contact-map(data-toggle='tab', href='#contact') Contact
+                      li
+                        a(data-toggle='tab', href='#edit') Edit Profile
+                  // /panel-heading
+                  .panel-body
+                    .tab-content
+                      #overview.tab-pane.active
+                        .row
+                          .col-md-12
+                            if (user)
+                              form#comments-form.comments__form
+                                .media
+                                  img.media__avatar(src='https://via.placeholder.com/48', alt='')
+                                  .media__body
+                                    div
+                                      textarea#comments-textarea.comments__textarea(type='text', rows='3', placeholder='Whats on your mind?')
+                                      .grey-style
+                                        .pull-left
+                                          button.btn.btn-sm.btn-theme
+                                            i.fa.fa-camera
+                                          button.btn.btn-sm.btn-theme
+                                            i.fa.fa-map-marker
+                                        .pull-right
+                                          button.btn.btn-sm.btn-theme03(type='submit') POST
+                                      .detailed.mt
+                                        h4 Recent Activity
+                                        .recent-activity                                        
+                                          ul#comments-list.comments__list.no-list 
+
+                             
+                              // /recent-activity
+                            // /detailed
+                        // /OVERVIEW
+                      // /tab-pane
+                      #friend.tab-pane
+                        .row
+                          .col-md-12.detailed  
+                            form
+                              input#recherche(type='text')                         
+                            // /row
+                            h4 My Friends
+                            .row.centered.mb
+                              ul.my-friends
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-01.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-02.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-03.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-04.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-05.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-06.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-07.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-08.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-09.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-10.jpg')
+                                li
+                                  .friends-pic
+                                    img.img-circle(width='35', height='35', src='/img/friends/fr-11.jpg')
+                              .row.mt
+                                .col-md-4.col-md-offset-4
+                                  h6
+                                    a(href='#') VIEW ALL
+                            
+                            // /row
+                          // /col-md-6
+                        // /OVERVIEW
+                      // /tab-pane
+                      #contact.tab-pane
+                        .row
+                          .col-md-6
+                            #map
+                          // /col-md-6
+                          .col-md-6.detailed
+                            h4 Location
+                            .col-md-8.col-md-offset-2.mt
+                              p
+                                | #{user.societe}
+                                br
+                                |  
+                                br
+                                |  #{user.presentation}
+                              br
+                              p
+                                | #{user.preference}
+                                br
+                            h4 Contacts
+                            .col-md-8.col-md-offset-2.mt
+                              p
+                                | Phone: +33 4898-4303
+                                br
+                                |  Cell: 48 4389-4393
+                                br
+                              br
+                              p
+                                | Email: #{user.mail_pro}
+                                br
+                                |  Linkedine: #{user.linkedine}
+                                br
+                          // /col-md-6
+                        // /row
+                      // /tab-pane
+                      #edit.tab-pane
+                        .row
+                          .col-lg-8.col-lg-offset-2.detailed
+                            h4.mb Personal Information
+                            form.form-horizontal(action="/profil" method="POST" autocomplete="off")
+                              .form-group
+                                label.col-lg-2.control-label Société
+                                .col-lg-6
+                                  input#c-name.form-control(type='text', name='societe', placeholder=' ' )
+                              .form-group
+                                label.col-lg-2.control-label Présentation
+                                .col-lg-10
+                                  textarea.form-control(rows='10', cols='30', id='', name='presentation')
+                              .form-group
+                                label.col-lg-2.control-label Préférence
+                                .col-lg-10
+                                  textarea.form-control(rows='10', cols='30', id='', name='preference')
+                              .form-group
+                                label.col-lg-2.control-label Email
+                                .col-lg-6
+                                  input#email.form-control(type='text', name='mail_pro')
+                              .form-group
+                                label.col-lg-2.control-label Linkedin
+                                .col-lg-6
+                                  input#linkedin.form-control(type='text', name='linkedin')
+                              .form-group
+                                .col-lg-offset-2.col-lg-10
+                                  button.btn.btn-theme(type='submit') Save
+                                  button.btn.btn-theme04(type='button') Cancel
+                          // /col-lg-8
+                        // /row
+                      // /tab-pane
+                    // /tab-content
+                  // /panel-body
+                // /col-lg-12
+              // /row
+            // /container
+          // /wrapper
+        // /MAIN CONTENT
+        // main content end
+
+
+  footer#footer
+
+
+block scripts
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')
+  
+  script(src='/lib/jquery.min.js')
+  script(src='/lib/bootstrap.min.js')
+  //script(src='/lib/jquery.scrollTo.min.js')
+  //script(src='/lib/jquery.nicescroll.js', type='text/javascript')
+  // common script for all pages
+  //script(src='/lib/common-scripts.js')
+  script(src='/lib/jquery-3.3.1.min.js')
+  script(src='/javascript/main.js')
+  //script(src='/javascript/search.js')
+  
+  
+    

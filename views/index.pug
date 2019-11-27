@@ -1,0 +1,35 @@
+extends layouts/base
+
+block content
+
+  header#head
+    .container  
+      .row
+        .col-sm-6
+          h1.lead IFOBOOK
+        .col-sm-6
+          img(src='/img/mac.jpg', alt='Progressus HTML5 template')
+  
+  .container.text-center
+    br
+    br
+    h2.thin Ifobook
+    p.text-muted
+      | Ifobook est un réseau social permettant aux éléves en stage ou ancient éléves en poste,
+      br
+      | de pouvoir partagé leurs expériences, des offres de stage et offre d'emploi avec
+      br
+      | &#x9;&#x9;&#x9;les éléves toujour formation.
+    
+
+  footer#footer
+
+  
+block scripts
+  script(src='/lib/jquery-3.3.1.min.js')
+  //script(src='/javascript/main.js')
+  script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js')
+  script(src='/lib/headroom.min.js')
+  script(src='/lib/jQuery.headroom.min.js')
+  script(src='/lib/template.js')

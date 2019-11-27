@@ -1,0 +1,38 @@
+.navbar.navbar-inverse.navbar-fixed-top.headroom
+  .container
+    .navbar-header
+      // Button for smallest screens
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        img(src='/img/logo.png', alt='Progressus HTML5 template')
+
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav.pull-right
+        li.active
+          a(href='/') Home
+        li
+          a(href='/about') About
+        if (!user)
+          li
+            a.btn(href='/signin') SIGN IN / SIGN UP
+        if (user)
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              | Profil 
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='/profil') Profil
+              li.active
+                a(href='/change_avatar') Modifier Avatar
+              li.active
+                a(href='/change_password') Modifier Mot de passe
+          li
+            a(href='/recherche_membre') Recherche
+          li
+            a.btn(href="/logout") DÉCONNEXION
+          
+      // /.nav-collapse
